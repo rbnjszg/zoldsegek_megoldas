@@ -61,7 +61,11 @@ class VegetableController extends Controller
     }
 
     public function show($id){
-        return view("vegetable.show", []);
+        $vegetable = $this->loadVegetables()->firstOrFail("id", "=", $id);
+        return view("vegetable.show",[
+            "title" => $vegetable["name"],
+            "vegetables" => $vegetable
+        ]);
     }
 
     public function table(Request $request){
