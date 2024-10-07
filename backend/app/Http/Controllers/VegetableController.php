@@ -63,4 +63,23 @@ class VegetableController extends Controller
     public function show($id){
         return view("vegetable.show", []);
     }
+
+    public function table(Request $request){
+
+        $vegetables = $this->loadVegetables();
+
+        $name = $request->query("name", null);
+        
+        if ($request->has("name")) {
+            $vegetables = $vegetables->filter(
+                fn (array $vegetables, int $key)
+                => $vegetables["name"] == $name
+            );
+        }
+        return view("vegetable.table", [
+            "title" => "Zöldségek táblázatban",
+            "vegetables" => $vegetables
+        ]);
+        
+    }
 }
