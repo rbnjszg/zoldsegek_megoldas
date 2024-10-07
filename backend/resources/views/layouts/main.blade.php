@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+    @include('layouts.menu')
     <div class="container">
         @yield('content')
     </div>
