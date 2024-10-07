@@ -10,7 +10,7 @@
             <form>
                 <div class="mb-3">
                     <label class="form-label" for="keres">Mit keresel?</label>
-                    <input class="form-control" type="text" id="keres">
+                    <input class="form-control" type="text" id="keres"  name="name">
                 </div>
                 <div class="mb-3">
 
